@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Embbeded Checkout</title>
+    <script crossorigin src="https://pay.conekta.com/v1.0/js/conekta-checkout.min.js" type="module"></script>
+  </head>
+  <body>
+    <div id="example" style="height: 700px; width: 100%"></div>
+
+    <script>
+      window.initializeCheckout = function ({config, options, callbacks}) {
+        if (window.ConektaCheckoutComponents) {
+            window.ConektaCheckoutComponents.Card({ config: {...config, targetIFrame: "#example"}, options, callbacks });
+        }
+      };
+    </script>
+  </body>
+</html>
